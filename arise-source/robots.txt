@@ -1,4 +1,4 @@
 User-agent: * 
-Disallow: https://ari.se.net/config/*
+Disallow: https://github.com/d-scanzi/d-scanzi.github.io/config/*
 
-Sitemap: https://ari.se.net/sitemap.xml
+Sitemap: https://github.com/d-scanzi/d-scanzi.github.io/sitemap.xml
