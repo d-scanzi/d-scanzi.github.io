@@ -10,8 +10,8 @@ body{
         max-width:650px;
         line-height:1.6;
         font-size:18px;
-        color:#65f85a;
-        background-color:#121619;
+        color:#ffffff;
+        background-color:#000000;
         padding:0 10px;
 }
 /********************************/
@@ -65,14 +65,14 @@ blockquote {
 }
 
 hr {
-        color:#65f85a;
+        color:#000000;
         margin-left: auto;
         margin-right: auto;
         max-width: 300px;
 }
 
 #endline { /* Special kind of <hr> for spacing out footnotes from the rest of a post */
-        color:#65f85a;               
+        color:#000000;               
         margin-left: auto;              
         margin-right: auto;
         max-width: 300px;
@@ -80,7 +80,7 @@ hr {
 }
 
 a {
-        color:#b8f1b4
+        color:#000000
 }
 
 h1{
@@ -126,19 +126,19 @@ h2,h3{
 /* Navbar styling. */
 .topbar {
         padding-right:10px;
-        border-top:1px solid #65f85a;
-        border-bottom:1px solid #65f85a;
+        border-top:1px solid #000000;
+        border-bottom:1px solid #000000;
         margin-bottom:20px;
         text-align:center;
 }
 .topbar a {
-color:#65f85a;
+color:#000000;
 text-decoration:none;
 }
 
 /* Site footer styling */
 .footer {
-        border-top:2px solid #65f85a;
+        border-top:2px solid #000000;
         font-size:12px;
         margin-top:120px;
         text-align:center;
@@ -153,7 +153,7 @@ text-decoration:none;
 /* Arise Index Style */
 .arise-toc-td {
   border-width: 1px;
-  border-color: #65f85a;
+  border-color: #000000;
   border-top-style: solid;
   text-align: center;
   padding-right: 10px;
