@@ -168,4 +168,5 @@ text-decoration:none;
 .ascii-art {
     font-family: monospace;
     white-space: pre;
+	text-align: center;
 }
