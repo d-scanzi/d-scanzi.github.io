@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en-UK">
+  <head>
+    <link href="../styles/main.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Daniele Scanzi</title>
+    
+    <script>
+      async function include(selector, url) {
+        const res = await fetch(url);
+        const html = await res.text();
+        document.querySelector(selector).innerHTML = html;
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        include("#header", "../header.html");
+        include("#footer", "../footer.html");
+      });
+   </script>
+    
+  </head>
+
+  <body>
+    <!-- Header Menu -->
+    <div id="header"></div>
+    
+    <!-- List of posts -->
+    <div class="posts-list">
+      <ul>
+        <li><a href="old_posts/post_1_2024.html">Stop treating participants as passive subjects</a></li>
+        <li><a href="old_posts/post_1_2023.html">Musical reflections on academic competitiveness</a></li>
+      </ul>
+    </div>
+    
+    <!-- Footer -->
+    <div id="footer"></div>
+    
+  </body>
+
+</html>

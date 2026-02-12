@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en-UK">
+  <head>
+    <link href="styles/main.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Daniele Scanzi</title>
+    
+    <script>
+      async function include(selector, url) {
+        const res = await fetch(url);
+        const html = await res.text();
+        document.querySelector(selector).innerHTML = html;
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        include("#header", "../header.html");
+        include("#footer", "../footer.html");
+      });
+   </script>
+    
+  </head>
+  
+  <body>
+    <!-- Header Menu -->
+    <div id="header"></div>
+    
+    <!-- Logo -->
+    <main>
+      <pre>
+      ____________________________
+      _/\/\/\/\/\______/\/\/\/\/\_
+      _/\/\____/\/\__/\/\_________
+      _/\/\____/\/\____/\/\/\/\___
+      _/\/\____/\/\__________/\/\_
+      _/\/\/\/\/\____/\/\/\/\/\___
+      ____________________________
+      </pre>
+    </main>
+    <!-- Footer -->
+    <div id="footer"></div>
+    
+  </body>
+
+</html>
