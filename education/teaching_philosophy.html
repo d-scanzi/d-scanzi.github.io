@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en-UK">
+  <head>
+    <link href="../../styles/main.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Daniele Scanzi</title>
+    
+    <script>
+      async function include(selector, url) {
+        const res = await fetch(url);
+        const html = await res.text();
+        document.querySelector(selector).innerHTML = html;
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        include("#header", "../../header.html");
+        include("#footer", "../../footer.html");
+      });
+  </script>
+    
+  </head>
+  
+  <body>
+     <!-- Header Menu -->
+    <div id="header"></div>
+    
+    <!-- Post content -->
+    <main class="post-container">
+      <article class="post">
+        <h1> My Teaching Philosophy </h1>
+        <div class="entry">
+		
+		<p>
+		A class is a community where personal experiences, knowledge, ideas and personalities meet to create and acquire knowledge. As an educator, my role is to foster this community and guide the acquisition and production of knowledge. I use the word "guide" with intention. In my view, teaching is not a passive transmission of information from an authority, but a cooperative moment where students should contribute actively.
+		</p>
+		<p>
+		In class, I strive to establish a shallow yet balanced authority gradient between myself and the students. I achieve this through different strategies, but class and group discussions play a vital role, so I try to use them whenever possible. During class discussions I sit with students, while during small group activities, I spend time with each group individually. Doing so reduces the perceived authority associated with a professor standing in front of the class, leading students to feel more comfortable speaking up, sharing their thoughts, asking and answering questions.
+		</p>
+		<p>
+		The benefit of establishing a welcoming, supportive and engaging environment is that students' confidence in their abilities increases, allowing them to tackle challenging tasks. I have high expectations of all students, and I believe these expectations can be met in the right environment. For instance, when my colleague and I developed a series of neurophysiological laboratories, we designed them to be just outside the boundaries of the class content, but not examinable. By doing so, we helped students to deepen their understanding without focusing on formal outcomes.
+		</p>
+		<p>
+		By defining a class as a community, I recognise that each class is unique, with its specific dynamics, requirements, and emerging properties. In class, I actively seek feedback from students, and I modify the details of my methods accordingly to optimise students' learning and achievement. During my PhD. I have successfully applied my teaching philosophy across different campuses and subjects within and outside the field of psychology. Moreover, I have striven to build communities of psychology students with the goal of increasing the technical and analytical capacity within the School of Psychology. Throughout these experiences, the mix of shallow authority gradient, active learning, and flexibility has been positively welcomed by students, as evidenced in their feedback available <a href="./students_review.html">here</a>.
+		</p>
+
+        </div>
+      </article>
+    </main>
+    <!-- Footer -->
+    <div id="footer"></div>
+    
+  </body>
+</html>
