@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en-UK">
+  <head>
+    <link href="../../styles/main.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Daniele Scanzi</title>
+    
+    <script>
+      async function include(selector, url) {
+        const res = await fetch(url);
+        const html = await res.text();
+        document.querySelector(selector).innerHTML = html;
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        include("#header", "../../header.html");
+        include("#footer", "../../footer.html");
+      });
+  </script>
+    
+  </head>
+  
+  <body>
+     <!-- Header Menu -->
+    <div id="header"></div>
+    
+    <!-- Post content -->
+    <main class="post-container">
+      <article class="post">
+        <h1>React Students Showcase 2026</h1>
+        <p>Original photos by <a href="https://www.instagram.com/ruawaahia/">@ruawaahia</a> - Dithered on this page to reduce size.</p>
+        <div class="entry">
+          <div class="image-container">
+            <img src="../images/aerial/circus_1.png", alt="Two people climbing on a trapeze">
+            <img src="../images/aerial/circus_2.png", alt="A person lying on the shoulders of another one sitting on a trapeze">
+            <img src="../images/aerial/circus_3.png", alt="A person hanging from ropes being pushed by another one from the back">
+            <img src="../images/aerial/circus_4.png", alt="A person hanging upside down from a trapeze holding another person by one hand.">
+            <img src="../images/aerial/circus_5.png", alt="A person sitting on a trapeze and a person standing on it.">
+            <img src="../images/aerial/circus_6.png", alt="A person hanging upside down with one foot locked in between of the legs of another person laying on a trapeze.">
+          </div>
+        </div>
+      </article>
+    </main>
+    <!-- Footer -->
+    <div id="footer"></div>
+    
+  </body>
+</html>

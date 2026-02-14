@@ -48,6 +48,10 @@ main, pre, .post-container {
   text-align: center;
 }
 
+.contacts {
+  align-self: center;
+}
+
 /* NAVIGATION BAR */
 nav ul {
   list-style-type: none;
