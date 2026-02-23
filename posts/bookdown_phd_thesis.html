@@ -1,0 +1,96 @@
+<html lang="en-UK">
+  <head>
+    <link href="../styles/main.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Daniele Scanzi</title>
+    
+    <script>
+      async function include(selector, url) {
+        const res = await fetch(url);
+        const html = await res.text();
+        document.querySelector(selector).innerHTML = html;
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        include("#header", "../header.html");
+        include("#footer", "../footer.html");
+      });
+  </script>
+    
+  </head>
+  
+  <body>
+     <!-- Header Menu -->
+    <div id="header"></div>
+    
+    <!-- Post content -->
+    <main class="post-container">
+      <article class="post">
+        
+        <h1> Phd Thesis with Bookdown Workflow </h1>
+        <div class="entry">
+			
+			<p>
+			I recently completed my PhD thesis. I wrote the chapters as a series of R Markdown files and assemble it into a single PDF using Bookdown. I opted for Bookdown after experimenting with different options: Word, LogSeq to Word, manually knitting different R Markdown files, but nothing satisfied all the requirements I had. Namely:
+			</p>
+			
+			<ul>
+				<li><b>Integration with Zotero:</b> I did not want to manually format every inline reference and the full reference list.</li>
+				<li><b>Uses Latex:</b> I did not want to manually place each figure and spend too much time formatting everything.</li>
+				<li><b>Deals seemlessly with long format writing: my thesis was about 200 pages</b></li>
+				<li><b>Programmatic query of data:</b> I wanted to be able to report statistics, results and genrating images programmatically, by querying data rather than manually type every mean, standard deviation, etc...  </li>
+				<li><b>Integration with R and Python: I needed to be able to run both R and Python code as all my analyses were done in either of those languages</b></li>
+				<li><b>Can be replicated: If I publish the data and the thesis, anyone can recompile the thesis and obtain the same result.</b></li>
+			</ul>
+			
+			Bookdown ticks all these requirements and I could expand its capabilities further to obtain an even better final result. To set on this workflow, I pulled information from different sources:
+			
+			<ul>
+				<li><a href="llrs.dev/post/2022/05/09/writing-thesis-bookdown/">B101info</a></li>
+				<li><a href="https://www.r-bloggers.com/2021/07/how-i-resurrected-my-ancient-phd-thesis-using-r-bookdown-and-some-other-tools/">nsaunder's R-bloggers post</a></li>
+				<li><a href="https://ourcodingclub.github.io/tutorials/rmarkdown-dissertation/">Anna's post on Coding Club</a></li>
+				<li><a href="https://tysonbarrett.com/jekyll/update/2018/02/11/r_dissertation/">Tyson Barret's blog</a></li>
+				<li><a href="https://www.marianamontes.me/post/academic-writing-in-r-markdown-i/">Mariana Montes' blog</a></li>
+				<li><a href="https://yihui.org/bookdown/">Yihui Xie's Bookdown guide</a></li>
+			</ul>
+            <p>
+			However, there was no single guide containing all the details, and I had to do quite a bit of troubleshooting before getting something working properly. Thus, the reason for this post. A way to consolidate my workflow for future projects (e.g. journal articles) and to hopefully help someone else adopting a cool approach to write their dissertation. So, without further adue, let's get started.
+			</p>
+			
+			<h2>Set up</h2>
+			<p>
+			For this guide, I will assume you are confortable using <a href="https://www.zotero.org/">Zotero</a> as a reference manager and <a href="https://posit.co/downloads/">RStudio</a> as an IDE for R. If this is the very first time you use either of these software, you might want to take some time to understand them. There is plenty of information online and I might write a few guides about them in the future. Otherwise, we can start by setting up Zotero.
+			</p>
+			<h3> Set up: Zotero</h3>
+			<p>
+			At the time of writing I am using Zotero 7.0.16. The only one thing we really need is the <a href="https://retorque.re/zotero-better-bibtex/index.html">Better Bibtex</a> plugin. This plugin will help us with referencing material and keep the writing nice and tidy. So, Download and install the plugin. Now, we need to set up the Zoter directory from where we will pull the references. There is no strict rule regarding this, but this is my set-up. In <i>My Library</i>, I have a collection called <i>Main</i> were I store every paper I am interested in, independently of the project I am working on. I usually store papers using the <a href="https://www.zotero.org/download/connectors">Zotero connector</a> or the DOI. I also created a second collection called <i>phd_dissertation</i>. Inside this collection I have a nested collection for each section of my thesis. Basically, my Zotero directory is the following:
+			</p>
+			<p>
+			My Library
+			|-Main
+			|-phd_dissertation
+			| |_introduction
+			| |_chapter_1
+			| |_chapter_2
+			| |_...
+			| |_conclusions
+			</p>
+			
+			
+        </div>
+      </article>
+    </main>
+    <!-- Footer -->
+    <div id="footer"></div>
+    
+  </body>
+</html>
+
+
+
+
+
+
+
+
