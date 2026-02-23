@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en-UK">
+  <head>
+    <link href="../../../../../styles/main.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Daniele Scanzi</title>
+    
+    <script>
+      async function include(selector, url) {
+        const res = await fetch(url);
+        const html = await res.text();
+        document.querySelector(selector).innerHTML = html;
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        include("#header", "../../../../../header.html");
+        include("#footer", "../../../../../footer.html");
+      });
+  </script>
+    
+  </head>
+  
+  <body>
+     <!-- Header Menu -->
+    <div id="header"></div>
+    
+    <!-- Post content -->
+    <main class="post-container">
+      <article class="post">
+        <h1>Crustose Lichens</h1>
+        <p><center>Simulated decks of cards are spread in circular arrays over a geometric background. The rough circles of cards contrast with the geometric shapes of the components of these pieces.<a href="https://github.com/d-scanzi/cardistry">Code available on GitHub</a></center></p>
+        <div class="entry">
+          <div class="image-container">
+            <img src="../../images/cardcircles/cardcircle_1.png", alt="Generative art of geometric squares in circles">
+            <img src="../../images/cardcircles/cardcircle_2.png", alt="Generative art of geometric squares in circles">
+            <img src="../../images/cardcircles/cardcircle_3.png", alt="Generative art of geometric squares in circles">
+            <img src="../../images/cardcircles/cardcircle_4.png", alt="Generative art of geometric squares in circles">
+            <img src="../../images/cardcircles/cardcircle_5.png", alt="Generative art of geometric squares in circles">
+            <img src="../../images/cardcircles/cardcircle_6.png", alt="Generative art of geometric squares in circles">
+            <img src="../../images/cardcircles/cardcircle_7.png", alt="Generative art of geometric squares in circles">
+            <img src="../../images/cardcircles/cardcircle_8.png", alt="Generative art of geometric squares in circles">
+            <img src="../../images/cardcircles/cardcircle_9.png", alt="Generative art of geometric squares in circles">
+            <img src="../../images/cardcircles/cardcircle_10.png", alt="Generative art of geometric squares in circles">
+            <img src="../../images/cardcircles/cardcircle_11.png", alt="Generative art of geometric squares in circles">
+            <img src="../../images/cardcircles/cardcircle_12.png", alt="Generative art of geometric squares in circles">
+            <img src="../../images/cardcircles/cardcircle_13.png", alt="Generative art of geometric squares in circles">
+          </div>
+        </div>
+      </article>
+    </main>
+    <!-- Footer -->
+    <div id="footer"></div>
+    
+  </body>
+</html>
