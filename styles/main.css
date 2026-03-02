@@ -126,3 +126,29 @@ blockquote {
   font-style: italic;
   color: #faccd0
 }
+
+ hr { 
+  height: 4px; 
+  background-color: #faccd0; 
+  border: none; 
+} 
+
+/* TABLE */
+.table-container {
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: auto;
+  border: 1px solid #ccc;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 6px 8px;
+  text-align: left;
+}

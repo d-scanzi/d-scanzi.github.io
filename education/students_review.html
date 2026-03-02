@@ -18,7 +18,30 @@
         include("#footer", "../../footer.html");
       });
   </script>
-    
+  
+  <script>
+	function loadCSV(file, tableId) {
+	  fetch(file)
+		.then(response => response.text())
+		.then(data => {
+		  const rows = data.trim().split(/\r?\n/); // split only by new line
+		  const table = document.getElementById(tableId);
+
+		  rows.forEach((row, i) => {
+			const tr = document.createElement("tr");
+			const cell = document.createElement(i === 0 ? "th" : "td");
+			cell.textContent = row.trim();
+			tr.appendChild(cell);
+			table.appendChild(tr);
+		  });
+		});
+	}
+
+	loadCSV("./feedback_tables/appreciation_table.csv", "appreciation_table");
+	loadCSV("./feedback_tables/improve_table.csv", "improve_table");
+	loadCSV("./feedback_tables/other_table.csv", "other_table");
+  </script>
+
   </head>
   
   <body>
@@ -140,6 +163,11 @@
 		S: Integrating mini presentations which helps us build our public speaking and be more confident with our knowledge.
 		</blockquote>
 		
+		<center><b>All comments:</center></b>
+		<div class="table-container">
+		  <table id="appreciation_table"></table>
+		</div>
+		
 		<h2>What students think I should do better</h2>
 		In this section, I will try to reply to some of the comments I believe are interesting, or that report sentiments shared by different students.
 		
@@ -202,18 +230,18 @@
 		S: Nothing! I think you truly have taken into account feedback from previous years (or perhaps I am just used to your teaching style) and it’s been great.
 		</blockquote>
 		
-		<h2>All comments</h2>
-		<p>
-		If you are interested in reading all the comments, they are available on my 
+		<center><b>All suggestions</center></b>
+		<div class="table-container">
+		  <table id="improve_table"></table>
+		</div>
 		
-		</p>
-		
-		
-		
-		
+		<h2>Other comments</h2>
+		As my survey is meant to be quick, I leave the opportunity to express other ideas freely. Here is a complete list.
 
-		
-		
+		<div class="table-container">
+		  <table id="other_table"></table>
+		</div>
+
 		<hr>
 		<p id="footnote-1">[1] In aviation, there is a concept known as the <i>cockpit gradient</i>. This refers to the hierarchy and communication flow between the captain and the first officer: if the captain exerts too much
 		dominance, first officers may hesitate to speak up, which can lead to errors or accidents. A more balanced or shallow gradient encourages co-pilots to share their ideas, improving overall safety.
