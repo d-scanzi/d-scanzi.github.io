@@ -5,7 +5,7 @@ html {
 
 body {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr minmax(0, 1.25fr) 1fr;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
   margin: 0;
@@ -42,7 +42,7 @@ a:hover, a:active {
   text-align: center;
 }
 
-main, pre, .post-container {
+main, .post-container {
   grid-column: 2;
   grid-row: 2;
   text-align: center;
@@ -118,6 +118,7 @@ nav ul li {
   width: 100%;
   height: auto;
   padding: 14px;
+  max-width: 100%;
 }
 
 /* MISC */
@@ -151,4 +152,14 @@ th, td {
   border: 1px solid #ddd;
   padding: 6px 8px;
   text-align: left;
+}
+
+/* SYNTAX HIGHLIGHT */
+.hljs {
+  background: #000000 !important;
+}
+
+pre {
+    overflow-x: auto;       /* allows horizontal scroll */
+    text-align: left;       /* ensures left alignment */
 }
