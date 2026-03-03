@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en-UK">
+  <head>
+    <link href="../../styles/main.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Daniele Scanzi</title>
+    
+    <script>
+      async function include(selector, url) {
+        const res = await fetch(url);
+        const html = await res.text();
+        document.querySelector(selector).innerHTML = html;
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        include("#header", "../../header.html");
+        include("#footer", "../../footer.html");
+      });
+  </script>
+  
+  <!-- SYNTAX HIGHLIGHT -->
+  <link rel="stylesheet" href="../styles/highlight/styles/a11y-dark.min.css">
+  <script src="../styles/highlight/highlight.min.js"></script>
+  <script src="../styles/highlight/languages/matlab.min.js"></script>
+  <script>hljs.highlightAll();</script>
+    
+  </head>
+  
+  <body>
+     <!-- Header Menu -->
+    <div id="header"></div>
+    
+    <!-- Post content -->
+    <main class="post-container">
+      <article class="post">
+        <h1>Counting Triggers</h1>
+        <div class="entry">
+		<p>
+		This function is useful if you have triggers represented as codes (eg. T100) and you would like to add their meaning in the <code>EEG.event structure</code>. However, you can add any other information.
+		</p>
+		<hr>
+<pre><code>
+% EEG = add_trigger_info(EEG, trigInfo, varargin)
+%
+%    Add extra information to the EEG.event structure. It is useful to add
+%    trigger information for each trigger. For instance, you can add the
+%    meaning of each trigger if trigger codes have been used.
+%
+% In:
+%    EEG      - An EEGLAB data structure
+%    trigInfo - Cell array of size NxM. N should reflect the number of
+%               triggers for which extra information should be added. M
+%               should reflect the nuber of extra information to add. M new
+%               columns will be added to the EEG.event structure. M must be
+%               at least 2, where the first column should contain the
+%               names of the triggers (one for each row) and the second
+%               column contains the information to add. For instance, if
+%               you have three triggers and you want to add their meaning,
+%               you could pass a cell array such as:
+%               {'T100' 'start_recording'; 
+%                'T150' 'pause_recording';
+%                'T200' 'stop_recording'}
+%
+% Optional:
+%     fieldName - Cell array containing the names of the new columns to add
+%                 to the EEG.event structure. The cell array should have
+%                 size of 1xM, where M is the number of the extra
+%                 information columns to add. M must match the number of
+%                 columns of trigInfo. If no names are provided, the new
+%                 columns will be named 'X1', 'X2',..., 'XM'
+%
+% Out:
+%    EEG        - Modified copy of the EEG structure
+
+% Author: Daniele Scanzi
+
+function EEG = add_trigger_info(EEG, trigInfo, varargin)
+
+    p = inputParser;
+    
+    % Mandatory
+    addRequired(p, 'EEG', @isstruct);     % EEG structure
+    addRequired(p, 'trigInfo', @iscell);  % Cell array containing tirgger info
+    
+    % Optional
+    addParameter(p, 'fieldName', [], @iscell);         % Name/s to provide to the fields to add
+    
+    % Parse user input
+    parse(p, EEG, trigInfo, varargin{:});
+
+    EEG = p.Results.EEG;
+    triggInfo   = p.Results.trigInfo;
+    fieldName   = p.Results.fieldName;
+
+    %% Checks
+   
+   if size(trigInfo, 2) &le 1
+       error('triggerInfo should be a cell array with at least two columns: Trigger names - New field1 \n');
+   end
+
+   % Create names for field if not provided, check otherwise
+   if isempty(fieldName)
+       fieldName = cell(size(trigInfo, 2) - 1, 1);
+       for iField = 1:( size(trigInfo, 2) - 1 )
+           fieldName{iField, 1} = strcat('X', num2str(iField));
+       end
+   else
+       if length(fieldName) ~= ( size(trigInfo, 2) - 1 )
+           error('fieldNames should match the number of new fields contained in trigInfo \n');
+       end
+   end
+   
+   for iEvent = 1:length(EEG.event)
+       currentEvent       = EEG.event(iEvent).type;
+       currentTrigInfoIdx = find(strcmp(trigInfo(:, 1), currentEvent));
+
+       % Add info
+       for iInfo = 1:length(fieldName)
+           if isempty(currentTrigInfoIdx)
+               EEG.event(iEvent).(fieldName{iInfo}) = 'n/a';
+           else
+               EEG.event(iEvent).(fieldName{iInfo}) = trigInfo{currentTrigInfoIdx, iInfo+1};
+           end
+       end
+   end
+end
+</code></pre>
+
+        </div>
+      </article>
+    </main>
+    <!-- Footer -->
+    <div id="footer"></div>
+    
+  </body>
+</html>

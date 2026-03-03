@@ -134,6 +134,10 @@ blockquote {
   border: none; 
 } 
 
+.ascii-art {
+  text-align: center;
+}
+
 /* TABLE */
 .table-container {
   max-height: 400px;
@@ -160,6 +164,16 @@ th, td {
 }
 
 pre {
-    overflow-x: auto;       /* allows horizontal scroll */
-    text-align: left;       /* ensures left alignment */
+    overflow-x: auto;
+    text-align: left;       
+}
+
+/* PUBBLICATIONS */
+.publication-list {
+	text-align: left;
+}
+
+me {
+	color: #faccd0;
+	font-style: bold;
 }
