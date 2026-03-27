@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en-UK">
+  <head>
+    <link href="../styles/main.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Daniele Scanzi</title>
+    
+    <script>
+      async function include(selector, url) {
+        const res = await fetch(url);
+        const html = await res.text();
+        document.querySelector(selector).innerHTML = html;
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        include("#header", "../header.html");
+        include("#footer", "../footer.html");
+      });
+   </script>
+    
+  </head>
+
+  <body>
+    <!-- Header Menu -->
+    <div id="header"></div>
+    
+	<main class=publication-list>
+    <h2>Papers</h2>
+	<ul>
+		<li>Constant, M., Mandal, A., Asanowicz, D., Panek, B., Kotlewska, I., Yamaguchi, M., Gillmeister, H., Kerzel, D., Luque, D., Molinero, S., Vázquez-Millán, A., Pesciarelli, 
+		F., Borelli, E., Ramzaoui, H., Beck, M., Somon, B., Desantis, A., Castellanos, M. C., Martín-Arévalo, E., ..., <b>Scanzi, D.,</b> Liesefeld, H. R. (2025). 
+		A multilab investigation into the N2pc as an indicator of attentional selectivity: Direct replication of Eimer (1996). Cortex. <a href="https://doi.org/10.1016/j.cortex.2025.05.014">https://doi.org/10.1016/j.cortex.2025.05.014</a></li>
+	</ul>
+	<h2>Conferences</h2>
+	<ul>
+		<li><b>Scanzi, D.</b>, Taylor, D., McNair, K., King, R., Braddock, C., & Corballis, P. M., (2023, November 27 – 30). 
+		Beyond noise removal: a method to unveil the influence of EEG preprocessing on neuronal signals and inform pipeline selection [Poster session]. Australasian Cognitive Neuroscience Society meeting, Sydney, NSW, Australia.</li>
+		<li><b>Scanzi, D.</b>, Zehr, J., Foppolo, F., & Schwarz, F. (2018, November 29 – 30). 
+		Only vs. clefts: The incremental processing of presupposed vs. entailed content [Poster session]. ProsLang – Workshop on the Processing of Prosody across Languages and Varieties, Wellington, WGN, New Zealand.</li>
+		<li>Zehr, J., Foppolo, F., <b>Scanzi, D.</b>, & Schwarz, F. (2018, May 30 – June 1). It’s (only) you that... The incremental processing of presupposed vs. asserted content [Conference session]. XPRAG.it, Pavia, Italy.</li>
+	</ul>
+    </main>
+    <!-- Footer -->
+    <div id="footer"></div>
+    
+  </body>
+
+</html>

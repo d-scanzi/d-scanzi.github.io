@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en-UK">
+  <head>
+    <link href="../../styles/main.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Daniele Scanzi</title>
+    
+    <script>
+      async function include(selector, url) {
+        const res = await fetch(url);
+        const html = await res.text();
+        document.querySelector(selector).innerHTML = html;
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        include("#header", "../../header.html");
+        include("#footer", "../../footer.html");
+      });
+  </script>
+    
+  </head>
+  
+  <body>
+     <!-- Header Menu -->
+    <div id="header"></div>
+    
+    <!-- Post content -->
+    <main class="post-container">
+      <article class="post">
+        <h1> Musical Reflections on Academic Competitiveness </h1>
+        <div class="entry">
+          <p>
+          In the past two months, I’ve been obsessed with the new album of Pinguini Tattici Nucleari. Every song deals with a different theme in a powerful way. I cried multiple times to <a href="https://www.youtube.com/watch?v=oWdWkS5t5Hs">Ricordi</a> and its earthly depiction of dealing with a parent suffering from Alzheimer’s. I reflect on the concept of faith with <a href="https://www.youtube.com/watch?v=ZYu74OVZeDc">Fede</a> and the Italian socio-political situation with <a href="https://www.youtube.com/watch?v=a_wuhv1nSG8">Coca Zero</a>. However, <a href="https://www.youtube.com/watch?v=Bc-imn-FTOA">Zen</a> is the single I go back to over and over again.
+          </p>
+          <p>
+          The reason for this is simple. It describes something I often feel, being often worried about the future and looking for a moment of Zen. But one sentence got stuck in my mind, and it has nothing to do with my psychological state and everything with academia.
+          </p>
+          <blockquote lang="it">
+          Essere competitivo non serve se sai di еssere competеnte
+          </blockquote>
+          <p>
+          Which translates to:
+          </p>
+          <blockquote>
+          You don’t need to be competitive if you know you’re competent
+          </blockquote>
+          <p>
+          It’s just one sentence, a simple one. Still, it captures so well the academic environment, where people feel the need to show their knowledge, achievement and prizes just for the sake of establishing their position. Something exacerbated by the Universities themselves, putting people against each to obtain one position (often underpaid), a breadcrumb of notoriety in the field. So much so that we are still here having well-established academics that have to act as the “bad cop” in recruitment panels for the sake of it. Or you need to fight for years for an opportunity to become a clinical psychologist because, you know, we need psychologists, but only if they are elitists.
+          </p>
+          <p>But do I need to take part in this? Do I need to play the game?</p>
+          <p>No, I don’t. I know my worth, I know my strengths and weaknesses. I don’t want to be competitive. It’s useless. It’s worthless. It’s damaging to others.</p>
+          <p>A simple song, a verse, a sentence. Yet so much to think about.</p>
+        </div>
+      </article>
+    </main>
+    <!-- Footer -->
+    <div id="footer"></div>
+    
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en-UK">
+  <head>
+    <link href="../styles/main.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Daniele Scanzi</title>
+    
+    <script>
+      async function include(selector, url) {
+        const res = await fetch(url);
+        const html = await res.text();
+        document.querySelector(selector).innerHTML = html;
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        include("#header", "../header.html");
+        include("#footer", "../footer.html");
+      });
+   </script>
+    
+  </head>
+
+  <body>
+    <!-- Header Menu -->
+    <div id="header"></div>
+    
+    <!-- List of art projects -->
+    <div class="image-container">
+      <h1>Circus</h1>
+      <h2>Juggling</h2>
+      <a href="./juggling/juggling_post.html">
+        <img src="./images/juggling/juggling_1.png">
+      </a>
+      <h2>Aerial</h2>
+      <a href="./aerial/aerial_post.html">
+        <img src="./images/aerial/circus_2.png">
+      </a>
+      <h1>Coding Art</h1>
+      <h2>Crustose Lichens</h2>
+      <a href="./generative_art/lichens/lichens_page.html">
+        <img src="./images/lichens/lichen_19.png">
+      </a>
+      <h2>Cardcircles</h2>
+      <a href="./generative_art/cardcircles/cardcircles_page.html">
+        <img src="./images/cardcircles/cardcircle_12.png">
+      </a>
+    </div>
+
+    
+    <!-- Footer -->
+    <div id="footer"></div>
+    
+  </body>
+
+</html>
