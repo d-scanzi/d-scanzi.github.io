@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en-UK">
+  <head>
+    <link href="../../../../../styles/main.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Daniele Scanzi</title>
+    
+    <script>
+      async function include(selector, url) {
+        const res = await fetch(url);
+        const html = await res.text();
+        document.querySelector(selector).innerHTML = html;
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        include("#header", "../../../../../header.html");
+        include("#footer", "../../../../../footer.html");
+      });
+  </script>
+    
+  </head>
+  
+  <body>
+     <!-- Header Menu -->
+    <div id="header"></div>
+    
+    <!-- Post content -->
+    <main class="post-container">
+      <article class="post">
+        <h1>10000 Neons</h1>
+        <p><center>
+        Inspired by the show <a href="https://www.gravityandothermyths.com/shows/ten-thousand-hours">10000 Hours</a> by the <i><a href="https://www.gravityandothermyths.com/">Gravity & Other Myths</a></i> group. Specifically, the seven-segments display clock they have in the background. This is the result. Not a clock, but a series of neon lights arranged in simple shapes, squares or curves, which repeats (or not) to create grids of light. A "wobble" is added (or not) to create a sense of instability and dynamicity. Code and more pieces available on <a href="https://github.com/d-scanzi/1000_neons">Github</a>.
+        </center></p>
+        <div class="entry">
+          <div class="image-container">
+            <img src="../../images/neons/neons_1.png", alt="Generative art of neon lights">
+            <img src="../../images/neons/neons_2.png", alt="Generative art of neon lights">
+            <img src="../../images/neons/neons_3.png", alt="Generative art of neon lights">
+            <img src="../../images/neons/neons_4.png", alt="Generative art of neon lights">
+           <img src="../../images/neons/neons_5.png", alt="Generative art of neon lights">
+           <img src="../../images/neons/neons_6.png", alt="Generative art of neon lights">
+          <img src="../../images/neons/neons_7.png", alt="Generative art of neon lights">
+          <img src="../../images/neons/neons_8.png", alt="Generative art of neon lights">
+          <img src="../../images/neons/neons_9.png", alt="Generative art of neon lights">
+          <img src="../../images/neons/neons_10.png", alt="Generative art of neon lights">
+          <img src="../../images/neons/neons_11.png", alt="Generative art of neon lights">
+          <img src="../../images/neons/neons_12.png", alt="Generative art of neon lights">
+          </div>
+        </div>
+      </article>
+    </main>
+    <!-- Footer -->
+    <div id="footer"></div>
+    
+  </body>
+</html>
